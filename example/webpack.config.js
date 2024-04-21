@@ -10,8 +10,8 @@ module.exports = {
     publicPath: '/dist/'
   },
   devServer: {
-    stats: "minimal",
-    contentBase: __dirname
+    // stats: "minimal",
+    // contentBase: __dirname
   },
   module: {
     rules: [
@@ -24,6 +24,7 @@ module.exports = {
       // this rule applies to <foo> blocks
       {
         resourceQuery: /blockType=foo/,
+        // test: /\.js$/, 不使用resourceQuery，使用test的话 会走 clonedRule里的 fakeResourcePath匹配
         loader: 'babel-loader'
       },
       // example configuring preprocessor for <template lang="pug">

@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import Foo from './source.vue'
+import Basic from '../test/fixtures/basic.vue'
 
 new Vue({
   el: '#app',
-  render: h => h(Foo)
+  render: h => h(Basic)
 })
