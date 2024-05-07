@@ -50,7 +50,7 @@ module.exports = {
           {
             resourceQuery: /module/,
             use: [
-              'vue-style-loader',
+              'vue-style-loader', // This is a fork based on style-loader. https://www.npmjs.com/package/vue-style-loader
               {
                 loader: 'css-loader',
                 options: {
@@ -71,17 +71,14 @@ module.exports = {
       },
       // exmaple configration for <style lang="scss">
       {
-        test: /\.scss$/,
+        test: /\.less$/,
         use: [
           'vue-style-loader',
           'css-loader',
           {
-            loader: 'sass-loader',
+            loader: require.resolve('less-loader')
             // global data for all components
             // this can be read from a scss file
-            options: {
-              data: '$color: red;'
-            }
           }
         ]
       }

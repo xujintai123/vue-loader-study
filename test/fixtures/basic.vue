@@ -17,8 +17,8 @@ export default {
 </style>
 
 
-<style>
-comp-a h2 {
+<style lang="less">
+.red {
   color: #f00;
 }
 </style>

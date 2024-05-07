@@ -51,6 +51,7 @@
   "dependencies": {
     "@vue/component-compiler-utils": "^3.1.0",
     "hash-sum": "^1.0.2",
+    "less": "4.2",
     "loader-utils": "^1.1.0",
     "vue-hot-reload-api": "^2.3.0",
     "vue-style-loader": "^4.1.0"
@@ -71,6 +72,7 @@
     "jest": "^23.5.0",
     "jsdom": "^11.6.2",
     "json": "^9.0.6",
+    "less-loader": "8.1.1",
     "lint-staged": "^7.0.0",
     "markdown-loader": "^2.0.2",
     "memfs": "^3.1.2",
