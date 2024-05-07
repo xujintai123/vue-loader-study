@@ -1,5 +1,6 @@
 const path = require('path')
 const VueLoaderPlugin = require('../lib/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -7,11 +8,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/dist/'
+    // publicPath: '/dist/' // 存放输出的静态资源的路径 https://www.yuque.com/xjt123/qf1uhq/pk40vk01b5nadn2w#o4eHi
+    publicPath: '/' // 存放输出的静态资源的路径 https://www.yuque.com/xjt123/qf1uhq/pk40vk01b5nadn2w#o4eHi
   },
   devServer: {
-    // stats: "minimal",
-    // contentBase: __dirname
+    // static: {
+    //   publicPath: '/'
+    //   // publicPath: '/dist/' // devServer.static.publicPath 要和 output.publicPath一致
+    // }
   },
   module: {
     rules: [
@@ -90,6 +94,9 @@ module.exports = {
     }
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './index.html')
+    })
   ]
 }
