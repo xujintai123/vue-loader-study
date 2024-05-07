@@ -2,7 +2,7 @@
 在 main.js 使用 import Basic from '../test/fixtures/basic.vue' （注意：本文只说明 template 在当前的 webpack.config.js 配置下的转换过程）
 
 ### 1. webpack 处理 'import Basic from '../test/fixtures/basic.vue' 匹配 vue-loader（.vue）。
-第一次经过 vue-loader 的产物为：import { render, staticRenderFns } from './basic.vue?vue&type=template&id=49803768&'
+第一次经过 vue-loader 的产物为：import { render, staticRenderFns } from './basic.vue?vue&type=template&id=49803768&' （第一次经过 vue-loader 的产物是个固定模版）
 
 
 ### 2. 由于步骤一里的产物含有 import 语句，webpack 会分析依赖，然后再去递归这些依赖。然后匹配到pitch-loader（?vue）、vue-loader（.vue）。
