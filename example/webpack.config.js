@@ -22,7 +22,15 @@ module.exports = {
       // { loader: require.resolve('./debugger') },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        use: [
+          {
+            loader: 'vue-loader'
+          },
+          // 补充测试用例 [测试多个 loader 匹配 .vue 的场景]
+          {
+            loader: 'match-vue-sfc-loader'
+          }
+        ]
       },
       // example to apply loader to a custom block without lang="xxx"
       // this rule applies to <foo> blocks
@@ -90,7 +98,8 @@ module.exports = {
   },
   resolveLoader: {
     alias: {
-      'vue-loader': require.resolve('../lib')
+      'vue-loader': require.resolve('../lib'),
+      'match-vue-sfc-loader': require.resolve('../lib/loaders/matchVueSfcLoader.js')
     }
   },
   plugins: [
