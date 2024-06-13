@@ -32,6 +32,15 @@ module.exports = {
           }
         ]
       },
+      {
+        test: /\.vue$/,
+        use: [
+          // 测试：匹配 .vue 的 loader 并且 normal 阶段执行顺序在 vue-loader 前 （此 loader 顺序在 vue-loader 之后，因此 normal 阶段执行顺序在 vue-loader 之前）
+          {
+            loader: require.resolve('./debugger')
+          }
+        ]
+      },
       // example to apply loader to a custom block without lang="xxx"
       // this rule applies to <foo> blocks
       {
